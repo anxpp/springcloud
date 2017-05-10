@@ -6,7 +6,11 @@ server:
 #eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
 
 eureka:
+  server:
+    #驱逐下线的服务，间隔30秒，默认是60
+    eviction-interval-timer-in-ms: 30
   client:
+    #强制不注册到注册服务器
     registerWithEureka: false
     fetchRegistry: false
   instance:
